@@ -38,7 +38,7 @@ function SampleNextArrow(props) {
                            zIndex:"999" ,
                            position:"absolute",
                            left: "15px",
-                           textIndent: "-32px"
+                           textIndent: "-32px",
                            }}
         onClick={onClick}>
           <img src="http://www.baskinrobbins.co.kr/assets/images/main/btn_banner_prev.png" alt="prev"/>
@@ -48,7 +48,7 @@ function SampleNextArrow(props) {
 
 const SlideDiv = styled.div`
     width: 100%;
-    
+   
     img{
         width: 100%;
     }
