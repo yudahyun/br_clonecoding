@@ -13,7 +13,6 @@ const WrapDivSt = styled.div`
     background:#fff;
     border-top:1px solid #f1f1f1;
     width: 100%;
-    border: 1px solid red;
 
     nav{
         width:1200px;
