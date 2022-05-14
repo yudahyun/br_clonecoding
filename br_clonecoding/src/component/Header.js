@@ -4,13 +4,14 @@
  * @author: 유다현(ekgus1129@gmail.com)
  */
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import styled from "styled-components";
 import axios from "axios";
 import { Link, Route, Routes } from "react-router-dom";
 import Spinner from "./Spinner";
 import Nav from "./Nav";
 import Skeleton from "./Skeleton";
+import Search from "./Search";
 
 const HeaderSt = styled.header`
   width: 100%;
@@ -41,6 +42,10 @@ const NavSt = styled.nav`
         height: 54px;
         text-indent: -999px;
         overflow: hidden;
+        cursor: pointer;
+        &.On {
+          background: url(http://www.baskinrobbins.co.kr/assets/images/common/btn_search_close.gif);
+        }
       }
     }
   }
@@ -78,46 +83,54 @@ const Header = () => {
     }, 0);
   }, []);
 
+  const [visible, setVisible] = useState(false);
+  const openSearch = useCallback(()=>{
+    setVisible(visible=>!visible);
+  }, []);
+
   return (
-    <HeaderSt>
-      <NavSt>
-        <ul>
-          {newMenu.map((v, i) => {
-            return (
-              <li key={i}>
-                <a href={v.href}>
-                  <img src={v.img} alt={v.alt} />
-                </a>
-              </li>
-            );
-          })}
-          {<Skeleton skeleton={skeleton} />}
-        </ul>
-        <a href="#!" key="logo">
-          <img
-            src="http://www.baskinrobbins.co.kr/assets/images/common/logo_baskinrobbins.png"
-            alt="베스킨 라빈스"
-          />
-        </a>
-        <ul>
-          <li className="">
-            <Link to="/service">고객센터</Link>
-          </li>
-          <li>
-            <Link to="/contac">contact us</Link>
-          </li>
-          <li>
-            <button className="searchBtn">검색</button>
-          </li>
-        </ul>
-        <Routes>
-          <Route path="/service" />
-          <Route path="/contact" />
-        </Routes>
-      </NavSt>
-      <Nav />
-      <Spinner loading={loading} />
-    </HeaderSt>
+    <>
+      <HeaderSt>
+        <NavSt>
+          <ul>
+            {newMenu.map((v, i) => {
+              return (
+                <li key={i}>
+                  <a href={v.href}>
+                    <img src={v.img} alt={v.alt} />
+                  </a>
+                </li>
+              );
+            })}
+            {<Skeleton skeleton={skeleton} />}
+          </ul>
+          <a href="#!" key="logo">
+            <img
+              src="http://www.baskinrobbins.co.kr/assets/images/common/logo_baskinrobbins.png"
+              alt="베스킨 라빈스"
+            />
+          </a>
+          <ul>
+            <li className="">
+              <Link to="/service">고객센터</Link>
+            </li>
+            <li>
+              <Link to="/contact">contact us</Link>
+            </li>
+            <li>
+              <button onClick={openSearch} className={visible? "searchBtn On":"searchBtn"}>검색</button>
+            </li>
+          </ul>
+          <Routes>
+            <Route path="/service" />
+            <Route path="/contact" />
+          </Routes>
+        </NavSt>
+        <Nav />
+        <Search visible={visible}/>
+        <Spinner loading={loading} />
+      </HeaderSt>
+    </>
   );
 };
 
