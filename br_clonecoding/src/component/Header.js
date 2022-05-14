@@ -15,6 +15,8 @@ import Search from "./Search";
 
 const HeaderSt = styled.header`
   width: 100%;
+  border-top: 3px solid #ff7c98;
+  border-bottom: 1px solid #3f291a;
   background: url(http://www.baskinrobbins.co.kr/assets/images/common/bg_header.gif);
   margin: 0 auto;
 `;
