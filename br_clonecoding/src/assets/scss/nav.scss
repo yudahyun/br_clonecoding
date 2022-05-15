@@ -20,6 +20,7 @@
         }
     }
 }
-.slick-prev:before, .slick-next:before{
+
+.slick-prew:hover:before,.slick-next:hover:before,.slick-prev:before, .slick-next:before{
     opacity: 0;
 }

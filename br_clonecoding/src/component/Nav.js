@@ -119,63 +119,60 @@ const Nav = () => {
                     </li>
                     <li  onMouseEnter={openMenu}  ref={hoverMenu} >
                         <a  className="top-menu" href="#!">flavor of the month</a>
-                    </li>
-                    <li onMouseEnter={openMenu}  ref={hoverMenu} >
-                        <a className="top-menu" href="#!">menu</a>
-                    </li>
-                    <li onMouseEnter={openMenu}  ref={hoverMenu} >
-                        <a className="top-menu"  href="#!">영양 성분 및 알레르기</a>
-                      
-                    </li>
-                    <li  onMouseEnter={openMenu}  ref={hoverMenu} >
-                      <a  className="top-menu" href="#!">event</a> 
-                      
-                    </li>
-                    <li  onMouseEnter={openMenu}  ref={hoverMenu} >
-                        <a  className="top-menu" href="#!">store</a>
-                    </li>
-                    <li onMouseEnter={openMenu} ref={hoverMenu}>
-                        <a  className="top-menu"  href="#!">about</a>
-                    </li>
-                </Ulst>
-                <div>
-                    <ul className="img-ul ul-menu-list" ref={el => (menuRef.current[0] = el)}>
+                        <ul className="img-ul ul-menu-list" ref={el => (menuRef.current[0] = el)}>
                             <li>
                                 <img src="http://www.baskinrobbins.co.kr/assets/images/common/img_happypoint_app.jpg" alt="아이스크림"/>
                             </li>
                             <li>
                             <a href="#!"><img src="http://www.baskinrobbins.co.kr/assets/images/common/flavor/img_monthly_fom_220429.png?v=220228" alt="아이스크림"/></a>
                             </li>
-                    </ul>
-                    <ul className="ul-menu-list"  ref={el => (menuRef.current[1] = el)}>
+                        </ul>
+                    </li>
+                    <li  onMouseEnter={openMenu}  ref={hoverMenu} >
+                        <a className="top-menu" href="#!">menu</a>
+                        <ul className="ul-menu-list"  ref={el => (menuRef.current[1] = el)}>
                             <li><a href="#!">아이스크림</a></li>
                             <li><a href="#!">아이스크림케이크</a></li>
                             <li><a href="#!">음료</a></li>
                             <li><a href="#!">커피</a></li>
                             <li><a href="#!">디저트</a></li>
-                    </ul>
-                    <ul className="ul-menu-list"  ref={el => (menuRef.current[2] = el)}>
+                        </ul>
+                    </li>
+                    <li  onMouseEnter={openMenu}  ref={hoverMenu} >
+                        <a  className="top-menu"  href="#!">영양 성분 및 알레르기</a>
+                        <ul className="ul-menu-list"  ref={el => (menuRef.current[2] = el)}>
                             <li><a href="#!">아이스크림</a></li>
                             <li><a href="#!">음료</a></li>
                             <li><a href="#!">커피</a></li>
-                    </ul>
-                    <ul className="ul-menu-list"  ref={el => (menuRef.current[3] = el)}>
+                        </ul>
+                    </li>
+                    <li  onMouseEnter={openMenu}  ref={hoverMenu} >
+                    <a  className="top-menu" href="#!">event</a> 
+                        <ul className="ul-menu-list"  ref={el => (menuRef.current[3] = el)}>
                             <li><a href="#!">진행중이벤트</a></li>
                             <li><a href="#!">당첨자발표</a></li>
-                    </ul>
-                    <ul className="ul-menu-list"  ref={el => (menuRef.current[4] = el)}>
+                            
+                        </ul>
+                    </li>
+                    <li  onMouseEnter={openMenu}  ref={hoverMenu} >
+                    <a  className="top-menu" href="#!">store</a>
+                        <ul className="ul-menu-list"  ref={el => (menuRef.current[4] = el)}>
                             <li><a href="#!">매장찾기</a></li>
                             <li><a href="#!">고객센터</a></li>
                             <li><a href="#!">단체주문</a></li>
-                    </ul>
-                    <ul className="ul-menu-list"  ref={el => (menuRef.current[5] = el)}>
+                        </ul>
+                    </li>
+                    <li onMouseEnter={openMenu} ref={hoverMenu}>
+                        <a  className="top-menu"  href="#!">about</a>
+                        <ul className="ul-menu-list"  ref={el => (menuRef.current[5] = el)}>
                             <li><a href="#!">공지사항</a></li>
                             <li><a href="#!">보도자료</a></li>
                             <li><a href="#!">채용정보</a></li>
                             <li><a href="#!">점포개설문의</a></li>
                             <li><a href="#!">contact us</a></li>
-                    </ul>
-                </div>
+                        </ul>
+                    </li>
+                </Ulst>
             </nav>
         </WrapDivSt>
     );

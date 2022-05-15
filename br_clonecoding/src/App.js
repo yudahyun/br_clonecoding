@@ -1,3 +1,10 @@
+/**
+ * @filename: App.js
+ * @description: 컴포넌트 랜더링 파일 
+ * @author: 유다현(ekgus1129@gmail.com)
+ */
+
+
 import React from "react";
 import Header from "./component/Header";
 import MainBanner from './component/MainBanner';
