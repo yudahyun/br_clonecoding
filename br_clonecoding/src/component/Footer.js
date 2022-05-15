@@ -1,7 +1,7 @@
 /**
 * @filename: Footer.js
 * @description: 최하단에 위치하는 컴포넌트 
-* @author: Kim Hyuna, 유다현(ekgus1129@gmail.com)
+* @author: Kim Hyuna
 */
 
 import React, {useState, useCallback} from 'react';
