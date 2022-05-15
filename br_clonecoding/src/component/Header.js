@@ -46,6 +46,8 @@ const NavSt = styled.nav`
         overflow: hidden;
         cursor: pointer;
         &.On {
+          position: relative;
+          z-index: 3000;
           background: url(http://www.baskinrobbins.co.kr/assets/images/common/btn_search_close.gif);
         }
       }
@@ -68,11 +70,9 @@ const Header = () => {
 
     setTimeout(() => {
       (async () => {
-        
         try {
-            const response = await axios.get("http://localhost:3001/menu");
-            setMenu(newMenu=> response.data);
-
+          const response = await axios.get("http://localhost:3001/menu");
+          setMenu((newMenu) => response.data);
         } catch (e) {
           console.log(e);
           console.log("연동실패");
@@ -80,14 +80,15 @@ const Header = () => {
         } finally {
           setLoading(false);
           setSkeleton(false);
-        }  
+        }
       })();
     }, 0);
   }, []);
 
+  // 추가(김현아) - 검색창 온오프
   const [visible, setVisible] = useState(false);
-  const openSearch = useCallback(()=>{
-    setVisible(visible=>!visible);
+  const openSearch = useCallback(() => {
+    setVisible((visible) => !visible);
   }, []);
 
   return (
@@ -120,7 +121,12 @@ const Header = () => {
               <Link to="/contact">contact us</Link>
             </li>
             <li>
-              <button onClick={openSearch} className={visible? "searchBtn On":"searchBtn"}>검색</button>
+              <button
+                onClick={openSearch}
+                className={visible ? "searchBtn On" : "searchBtn"}
+              >
+                검색
+              </button>
             </li>
           </ul>
           <Routes>
@@ -129,7 +135,7 @@ const Header = () => {
           </Routes>
         </NavSt>
         <Nav />
-        <Search visible={visible}/>
+        <Search visible={visible} />
         <Spinner loading={loading} />
       </HeaderSt>
     </>

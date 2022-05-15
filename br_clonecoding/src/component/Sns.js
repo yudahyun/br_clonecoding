@@ -1,3 +1,8 @@
+/**
+ * @filename: Sns.js
+ * @description: json-server와 axios로 불러온 데이터를 활용한 SNS 관련 내용의 컴포넌트
+ * @author: Kim Hyuna
+ */
 import React, { useEffect } from "react";
 import store from "../assets/img/img_store.jpg";
 import delivery from "../assets/img/img_happyorder_delivery.png";
